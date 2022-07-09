@@ -43,19 +43,19 @@ import (
 	"github.com/ahopo/ezs"
 )
 
-type EasyTemplate struct {
+type easyTemplate struct {
 	filename string
 }
 
 type _struct struct {
-	_tmpl  EasyTemplate
+	_tmpl  easyTemplate
 	_input interface{}
 }
 type out struct {
 	_struct _struct
 }
 
-func (tmpl *EasyTemplate) File(file string) *_struct {
+func (tmpl *easyTemplate) File(file string) *_struct {
 	tmpl.filename = file
 	_s := new(_struct)
 	_s._tmpl = *tmpl
@@ -109,6 +109,6 @@ func check(e error) {
 		panic(e)
 	}
 }
-func NewTMPL() EasyTemplate {
-	return *new(EasyTemplate)
+func NewTMPL() easyTemplate {
+	return *new(easyTemplate)
 }
