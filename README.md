@@ -1,0 +1,2 @@
+# eztmpl
+Easy Template 
