@@ -100,7 +100,7 @@ func build(_ss *out) string {
 	return str
 }
 func replace(text *string, tmpvar string, value string) {
-	tmp := regexp.MustCompile(fmt.Sprintf(`^({{)+[%s \s ]+(}})`, tmpvar))
+	tmp := regexp.MustCompile(fmt.Sprintf(`{{%s}}`, tmpvar))
 	*text = tmp.ReplaceAllString(*text, value)
 }
 
