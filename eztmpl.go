@@ -22,7 +22,7 @@
 //			person.Name="Jhon"
 //			person.Age=12
 //
-//			tmpl:=eztmpl.NewTMPL() // Initialiaze
+//			tmpl:=eztmpl.New() // Initialiaze
 //			tmpl.File("./path/sample.txt").Struct(person).SaveAs("./path/newfile.txt")
 //			output_string:=tmpl.File("./path/sample.txt").Struct(person).String()// string
 //			fmt.Println(output_string)
@@ -82,8 +82,6 @@ func (_ss *out) SaveAs(filename string) {
 	if err2 != nil {
 		log.Fatal(err2)
 	}
-
-	fmt.Println("done")
 }
 func (_ss *out) String() string {
 	return build(_ss)
@@ -109,6 +107,6 @@ func check(e error) {
 		panic(e)
 	}
 }
-func NewTMPL() easyTemplate {
+func New() easyTemplate {
 	return *new(easyTemplate)
 }
