@@ -93,8 +93,8 @@ func build(_ss *out) string {
 	dat, err := os.ReadFile(_ss._struct._tmpl.filename)
 	check(err)
 	str := string(dat)
-	structdata := ezs.New(_ss._struct._input)
-	for _, p := range structdata {
+	field := ezs.Get(_ss._struct._input)
+	for _, p := range field.Data {
 		replace(&str, p.TagValue, fmt.Sprint(p.Value))
 	}
 	return str
